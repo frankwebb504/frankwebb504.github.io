@@ -12,60 +12,66 @@
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+//function takes animals (array) as first property, and a name (string) as second property
 function search(animals, name) {
-    for (let x = 0; x <= animals.length -1; x++) {
-        if (name === animals[x]["name"]) {
-            return animals[x];
-        }
-        
+//to search through the array we need a loop    
+for (let i = 0; i <= animals.length - 1; i ++) {
+//now we need a conditional since we are looking for a specific name    
+    if (animals[i]['name'].toLowerCase() === name.toLowerCase()) {
+        return animals[i];
     }
-    return null;
 }
-
-
+//exits loop after all objects searched and none returned, so returns null
+return null;
+}
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//function will be wimular to splice, can take 3 arguments
 function replace(animals, name, replacement) {
-        for (let x = 0; x <= animals.length -1; x++) {
-        if (name === animals[x]["name"]) {
-            return animals[x] = replacement;
+//need to loop through the array to look for a specific name
+    for (let i = 0; i <= animals.length - 1; i++) {
+//conditional to find the name
+        if (animals[i]['name'].toLowerCase() === name.toLowerCase()) {
+//splice method works perfect for replaceing if name found
+            animals.splice(i, 1, replacement);
         }
-        
     }
 }
+
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//function will be just like search, but instead of returning the object, it will reomove it
 function remove(animals, name) {
-     for (let x = 0; x <= animals.length -1; x++) {
-        if (name === animals[x]["name"]) {
-            return animals.splice(x, 1);
-        }
-        
+//to search through the array we need a loop    
+for (let i = 0; i <= animals.length - 1; i ++) {
+//now we need a conditional since we are looking for a specific name    
+    if (animals[i]['name'].toLowerCase() === name.toLowerCase()) {
+        animals.splice(i, 1);
     }
+}    
 }
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Create ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
 function add(animals, animal) {
-     for (let x = 0; x <= animals.length -1; x++) {
-        if (animal["name"].length > 0
-        && animal["species"].length > 0) {
-        
-         if (animal["name"] === animals[x]["name"]) {
-            
-        }
-        else if () {animals.push(animal)}
+//need to search to make sure animal object has a name and species property
+if (animal.name.length > 0 && animal.species.length > 0) {
+//now we loop to makes sure no other animals with that name exist
+for (let i = 0; i <animals.length - 1; i ++) {
+    if (animals[i]['name'].toLowerCase() === animal['name'].toLowerCase()) {
+        return;
+    }
 }
 }
+return animals.push(animal);
 }
+
+
 /**
  * You did it! You're all done with Matchy!
  */
@@ -83,5 +89,3 @@ if((typeof process !== 'undefined') &&
     module.exports.remove = remove || null;
     module.exports.add = add || null;
 }
-
-

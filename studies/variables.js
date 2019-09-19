@@ -33,3 +33,44 @@ console.log(myName); // prints => bob
 var myVariable = 1;
 var myVariable = true;
 myVariable = "someString";
+//We can use three different keywords to declare variables: var, let, and const.
+
+//Var: hoisted to top of page, but not its assignments and reassignments. It is reassignable.
+console.log(fruit); //prints undefined because the name fruit is hoisted above the console log, but not the value assigned to it.
+var fruit = 'apple';
+fruit = 'orange';
+console.log(fruit); //prints orange now because the var keyword lets us reassign the variable to something different.
+//Not scoped to conditional statements or loops.
+
+
+//Let: not hoisted, but also reassignable. Variables declared with let are scoped to conditional statements and loops.
+console.log(vegatables); //throws reference error because the the name of the variable cannot be referenced until it is defined.
+let vegatables = 'carrots';
+vegatables = 'peas';
+console.log(vegatables); //prints peas now because let lets us reassign the value initially decared
+
+//Const: Also not hoisted, and not reassignable. Scoped to conditional statements and loops.
+console.log(desserts); //throws reference error because the the name of the variable cannot be referenced until it is defined.
+const desserts = 'cake';
+desserts = 'cookies';
+console.log(desserts); //prints error because the variable can not be reassigned
+
+//All three types are scoped to functions.
+//Hoisting just means that the variable declarations are lifted to the top of the code on the page. Their assignments are not.
+//If you try to access the date assigned beforehand it will be undefined instead of throwing a reference error.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

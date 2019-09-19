@@ -11,7 +11,21 @@
 var array = ['a', 'b', 'c'];
 for (let x = 0; x < array.length; x++) {
     console.log(array[x]);
-}   
+}  //loops forward over an array
+for (let x = array.length - 1; x >= 0; x--) {
+    console.log(array[x]);
+}   //loops backwards over an array
+
+
+// loop from 1 to 100 and print each number
+for (let i = 0; i <= 100; i++) {
+    console.log(i);
+}
+
+// loop backwards from 100 to 0 and print each number
+for (let x = 100; x >= 0; x--) {
+    console.log(x);
+}
 
 // For-In Loop: these are loops designed to be used on objects. They pull out the
 //     keys of an object. You can only use bracket notation to access the properties.

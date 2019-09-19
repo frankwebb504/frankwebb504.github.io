@@ -26,6 +26,9 @@ describe("#data", function () {
         it('noises should be an Array!', function () {
             expect(noises).to.be.an('array');
         });
+        it('noises should contain 4 noises', function() {
+            expect(noises.length).to.be.gte(4);
+        });
     });
 
     describe("Part 1, Step 3: Combining Step 1 and Step 2", function () {
@@ -103,7 +106,7 @@ describe("#functions", function () {
             expect(search(animals, nameOne).name).to.equal(nameOne);
             expect(search(animals, nameTwo).name).to.equal(nameTwo);
         });
-        it('search() should return undefined on not found!', function () {
+        it('search() should return null on not found!', function () {
             expect(search(animals, '_1904=-20zja-qkjsdfs=qweq!-')).to.be.null;
         });
     });
